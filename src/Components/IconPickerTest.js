@@ -4,9 +4,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import PropTypes from 'prop-types';
-
 import '@fortawesome/fontawesome-svg-core/styles.css';
-
 import { library } from '@fortawesome/fontawesome-svg-core';
 
 library.add(fab, fas, far);
