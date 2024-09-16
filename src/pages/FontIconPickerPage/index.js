@@ -15,14 +15,25 @@ const FontIconPickerPage = () => {
         <div className='flex w-[30%] mb-[997px]'>
 
         <IconPickerTest
-          icons={icons}
-          onChange={handleIconClick}
-          closeOnSelect={true}
-          showCategory={true}
-          showSearch={true}
-          isMulti={false}
-          adjustPosition={{ top: 36, left: 0 }}
-        />
+            icons={icons}
+            value={'fa-brands fa-amazon'}
+            onChange={(e) => console.log(e)}
+            closeOnSelect={true}
+            showCategory={true}
+            showSearch={true}
+            isMulti={false}
+            adjustPosition={{ top: 10, left: 0 }}
+            buttonStyle={`flex items-center justify-center min-h-[35px] min-w-[35px] rounded-l-[8px] border border-[#eaecf0]`}
+            noSelectedPlaceholder={''}
+            zIndexPopup={9999}
+            popupStyle='bg-white border border-gray-300 shadow-lg rounded popup-container min-w-[280px]'
+            gridColumns = {5}
+            gridRows = {4}
+            iconBgColor = {`bg-gray-200`}
+            iconSelectedBgColor = {`bg-blue-200`}
+            iconHeight = {65}
+            iconWidth = {65}
+          />
         </div>
       </header>
     </div>
