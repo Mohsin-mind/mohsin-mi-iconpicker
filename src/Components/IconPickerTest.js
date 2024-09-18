@@ -180,27 +180,27 @@ const IconPickerTest = ({
   const renderPopup = () => (
     <div
       ref={popupRef}
-      className={classNames(`absolute ${popupStyle} ${
-        isPositionSet ? '' : 'invisible'
-      }`)}
+      className={classNames(
+        `absolute ${popupStyle} ${isPositionSet ? "" : "invisible"}`
+      )}
       style={{
         top: `${popupPosition?.top}px`,
         left: `${popupPosition?.left}px`,
         zIndex: zIndexPopup,
       }}
     >
-      <div className='flex flex-col items-center p-4'>
-        <div className='flex flex-col mb-5 w-full'>
+      <div className="flex flex-col items-center p-4">
+        <div className="flex flex-col mb-5 w-full">
           {showSearch && (
             <input
-              type='text'
-              placeholder='Search icons...'
+              type="text"
+              placeholder="Search icons..."
               value={searchQuery}
               onChange={(e) => {
                 setSearchQuery(e.target.value);
                 setCurrentPage(1);
               }}
-              className='mb-2 py-2 text-base border-gray-300 border-b outline-none'
+              className="mb-2 py-2 text-base border-gray-300 border-b outline-none"
             />
           )}
           {showCategory && (
@@ -210,9 +210,9 @@ const IconPickerTest = ({
                 setSelectedCategory(e.target.value);
                 setCurrentPage(1);
               }}
-              className='py-2 text-base border-gray-300 border-b bg-transparent outline-none'
+              className="py-2 text-base border-gray-300 border-b bg-transparent outline-none"
             >
-              <option value='All'>All Categories</option>
+              <option value="All">All Categories</option>
               {categories.map((category, index) => (
                 <option key={index} value={category}>
                   {category}
@@ -222,56 +222,65 @@ const IconPickerTest = ({
           )}
         </div>
         {iconsToDisplay?.length > 0 && (
-          <div className='w-full flex justify-between items-center mb-2'>
-            <div className='flex items-center gap-2'>
-              <span className='border-gray-300 border-b w-8 text-right'>
+          <div className="w-full flex justify-between items-center mb-2">
+            <div className="flex items-center gap-2">
+              <span className="border-gray-300 border-b w-8 text-right">
                 {currentPage}
               </span>
               <span>/ {totalPages}</span>
             </div>
-            <div className='flex items-center'>
+            <div className="flex items-center">
               <button
                 onClick={() => handlePageChange(-1)}
                 disabled={currentPage === 1}
-                className='border-none bg-gray-200 text-gray-600 rounded cursor-pointer mx-2 px-2 transition-colors duration-300 hover:bg-gray-200 disabled:opacity-50 outline-none'
-                type='button'
+                className="border-none bg-gray-200 text-gray-600 rounded cursor-pointer mx-2 px-2 transition-colors duration-300 hover:bg-gray-200 disabled:opacity-50 outline-none"
+                type="button"
               >
-                <FontAwesomeIcon icon='angle-left' />
+                <FontAwesomeIcon icon="angle-left" />
               </button>
               <button
                 onClick={() => handlePageChange(1)}
                 disabled={currentPage === totalPages}
-                className='border-none bg-gray-200 text-gray-600 rounded cursor-pointer px-2 transition-colors duration-300 hover:bg-gray-200 disabled:opacity-50 outline-none'
-                type='button'
+                className="border-none bg-gray-200 text-gray-600 rounded cursor-pointer px-2 transition-colors duration-300 hover:bg-gray-200 disabled:opacity-50 outline-none"
+                type="button"
               >
-                <FontAwesomeIcon icon='angle-right' />
+                <FontAwesomeIcon icon="angle-right" />
               </button>
             </div>
           </div>
         )}
 
         {iconsToDisplay?.length === 0 ? (
-          <div className='text-gray-500'>No icons found</div>
+          <div className="text-gray-500">No icons found</div>
         ) : (
-          <div className={`grid gap-[2px] w-fit`}
-            style={{gridTemplateColumns: `repeat(${gridColumns}, 1fr)`, gridTemplateRows: `repeat(${gridRows}, 1fr)`}}
+          <div
+            className={`grid gap-[2px] w-fit`}
+            style={{
+              gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+              gridTemplateRows: `repeat(${gridRows}, 1fr)`,
+            }}
           >
             {iconsToDisplay.map((icon, index) => (
               <div
                 key={index}
-                className={classNames(`flex justify-center items-center cursor-pointer group overflow-hidden ${
-                  selectedIcons?.includes(icon) ? iconSelectedBgColor : iconBgColor
-                } hover:bg-gray-300`)}
-                style={{height: `${iconHeight}px`, width: `${iconWidth}px`}}
+                className={classNames(`flex justify-center items-center cursor-pointer group overflow-hidden rounded-[4px]
+                   hover:bg-gray-300 hover:shadow-[0_4px_15px_rgba(0,0,0,0.3)] hover:shadow-gray-500 hover:rounded-[10px] ${
+                     selectedIcons?.includes(icon)
+                       ? iconSelectedBgColor
+                       : iconBgColor
+                   }`)}
+                style={{ height: `${iconHeight}px`, width: `${iconWidth}px` }}
                 onClick={() => handleIconClick(icon)}
               >
                 <FontAwesomeIcon
                   icon={icon}
-                  className={classNames(`text-[20px] transform transition duration-200 group-hover:text-gray-600 group-hover:scale-200 ${
-                    selectedIcons?.includes(icon)
-                      ? 'text-blue-800'
-                      : 'text-gray-800'
-                  }`)}
+                  className={classNames(
+                    `text-[20px] transform transition duration-200 group-hover:text-gray-600 group-hover:scale-200 ${
+                      selectedIcons?.includes(icon)
+                        ? "text-blue-800"
+                        : "text-gray-800"
+                    }`
+                  )}
                 />
               </div>
             ))}

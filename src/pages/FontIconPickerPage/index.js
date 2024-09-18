@@ -4,10 +4,6 @@ import IconPickerTest from '../../Components/IconPickerTest';
 import IconPicker from '@mohsin-mi/iconpicker';
 
 const FontIconPickerPage = () => {
-  const handleIconClick = (icon) => {
-    console.log("Selected icon:", icon);
-  };
-
   return (
     <div className="App">
       <header className="App-header relative">
