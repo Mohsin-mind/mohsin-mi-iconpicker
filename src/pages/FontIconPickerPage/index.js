@@ -12,7 +12,7 @@ const FontIconPickerPage = () => {
 
         <IconPickerTest
             icons={icons}
-            value={'fa-brands fa-amazon'}
+            value={''}
             onChange={(e) => console.log(e)}
             closeOnSelect={true}
             showCategory={true}
@@ -20,7 +20,7 @@ const FontIconPickerPage = () => {
             isMulti={false}
             adjustPosition={{ top: 10, left: 0 }}
             buttonStyle={`flex items-center justify-center min-h-[35px] min-w-[35px] rounded-l-[8px] border border-[#eaecf0]`}
-            noSelectedPlaceholder={''}
+            noSelectedPlaceholder={'arrow-up-from-bracket'}
             zIndexPopup={9999}
             popupStyle='bg-white border border-gray-300 shadow-lg rounded popup-container min-w-[280px]'
             gridColumns = {5}

@@ -275,7 +275,7 @@ const IconPickerTest = ({
                 <FontAwesomeIcon
                   icon={icon}
                   className={classNames(
-                    `text-[20px] transform transition duration-200 group-hover:text-gray-600 group-hover:scale-200 ${
+                    `text-[20px] transform transition duration-200 hover:shadow-[0_35px_67px_rgba(225,225,225,0.3)] group-hover:text-gray-600 group-hover:scale-200 ${
                       selectedIcons?.includes(icon)
                         ? "text-blue-800"
                         : "text-gray-800"
@@ -304,7 +304,7 @@ const IconPickerTest = ({
             selectedIcons[0] || noSelectedPlaceholder || 'arrow-up-from-bracket'
           }
           size='lg'
-          className='text-gray-800'
+          className={`${selectedIcons?.[0] ? 'text-gray-800' : 'text-gray-500'}`}
         />
       </button>
       {isPopupVisible && ReactDOM.createPortal(renderPopup(), document.body)}
