@@ -1,39 +1,31 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import FontIconPickerPage from './pages/FontIconPickerPage';
+import Instagram from './pages/Instagram';
+import GoogleMap from './pages/Map';
 
 function App() {
-  // return (
-  //   <div className="App">
-  //     <header className="App-header">
-  //       <img src={logo} className="App-logo" alt="logo" />
-  //       <p>
-  //         Edit <code>src/App.js</code> and save to reload.
-  //       </p>
-  //       <a
-  //         className="App-link"
-  //         href="https://reactjs.org"
-  //         target="_blank"
-  //         rel="noopener noreferrer"
-  //       >
-  //         Learn React
-  //       </a>
-  //     </header>
-  //   </div>
-  // );
   return (
     <Router>
-      <div>
+      <div className='h-screen'>
         <nav>
           <ul>
             <li>
-              <Link to="/fontpicker-page">Click to go to FontIconPicker Page</Link>
+              <Link style={{ color: 'blue', textDecoration: 'underline' }} to="/fontpicker-page">FontIconPicker Page</Link>
+            </li>
+            <li>
+              <Link style={{ color: 'blue', textDecoration: 'underline' }} to="/instagram">Instagram Login Page</Link>
+            </li>
+            <li>
+              <Link style={{ color: 'blue', textDecoration: 'underline' }} to="/google-map">Go to Map</Link>
             </li>
           </ul>
         </nav>
 
         <Routes>
           <Route path="/fontpicker-page" element={<FontIconPickerPage />} />
+          <Route path="/instagram" element={<Instagram />} />
+          <Route path="/google-map" element={<GoogleMap />} />
         </Routes>
       </div>
     </Router>
