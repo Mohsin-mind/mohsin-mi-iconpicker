@@ -13,7 +13,7 @@ const FontIconPickerPage = () => {
 
         <IconPicker
             icons={icons}
-            value={'mi-icon-adobe-cloud text-orange-500'}
+            value={''}
             onChange={(e) => console.log(e)}
             closeOnSelect={true}
             showCategory={true}

@@ -108,6 +108,8 @@ const IconPicker = ({
       const iconColor = parts[1] || "text-black";
         setSelectedColor(colors.find((color) => color.textColor === iconColor) || colors[0]);
         setSelectedIcons(Array.isArray(iconName) ? iconName : [iconName]);
+      } else {
+        setSelectedIcons(['mi-icon-upload-01', 'text-black']);
       }
   }, [value]);
 
@@ -384,11 +386,18 @@ const IconPicker = ({
   
       setSelectedIcons(updatedIcons);
       onChange(updatedIcons);
-    } else if (selectedIcons.length > 0) {
-      const [iconName] = selectedIcons[0].split(" ");
-      const updatedIcon = `${iconName} ${color.textColor}`;
+    } else {
+      let updatedIcon = "";
+      let iconName = "";
+      if (selectedIcons.length > 0){
+         [iconName] = selectedIcons[0].split(" ");
+      } else {
+        iconName = 'mi-icon-upload-01';
+      }
+      updatedIcon = `${iconName} ${color.textColor}`;
       setSelectedIcons([updatedIcon]);
       onChange(updatedIcon);
+      
     }
     setShowColorPicker(false);
   };
