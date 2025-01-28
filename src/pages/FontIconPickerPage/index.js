@@ -2,7 +2,7 @@ import React from 'react';
 import { icons } from '../../utils/social-icons';
 import IconPicker from '../../Components/IconPicker';
 // import IconPicker from '@mohsin-mi/iconpicker';
-// import IconPicker from '@mohsin-mi/iconpicker';
+// import IconPicker from '@mindinventory/mi-react-icon-picker';
 
 const FontIconPickerPage = () => {
   return (

@@ -376,11 +376,20 @@ const IconPicker = ({
 
   const handleColorSelect = (color) => {
     setSelectedColor(color);
-    setSelectedIcons(selectedIcons.map((icon) => {
-      const parts = icon.split(" ");
-      const iconName = parts[0] || "";
-      return `${iconName} ${color.textColor}`;
-    }));
+    if (isMulti) {
+      const updatedIcons = selectedIcons.map((icon) => {
+        const [iconName] = icon.split(" ");
+        return `${iconName} ${color.textColor}`;
+      });
+  
+      setSelectedIcons(updatedIcons);
+      onChange(updatedIcons);
+    } else if (selectedIcons.length > 0) {
+      const [iconName] = selectedIcons[0].split(" ");
+      const updatedIcon = `${iconName} ${color.textColor}`;
+      setSelectedIcons([updatedIcon]);
+      onChange(updatedIcon);
+    }
     setShowColorPicker(false);
   };
   
