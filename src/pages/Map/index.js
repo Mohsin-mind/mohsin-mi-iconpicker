@@ -21,7 +21,7 @@ const GoogleMap = () => {
       if(!isLoaded){
         return;
       }
-      const [{ Map }, { AdvancedMarkerElement }] = await Promise.all([
+      await Promise.all([
         window.google.maps.importLibrary("marker"),
         window.google.maps.importLibrary("places"),
       ]);

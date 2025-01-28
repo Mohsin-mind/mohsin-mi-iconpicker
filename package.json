@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@mindinventory/mi-react-icon-picker": "^1.0.33",
     "@mohsin-mi/iconpicker": "^1.0.20",
     "@react-google-maps/api": "^2.20.5",
     "@testing-library/jest-dom": "^5.17.0",

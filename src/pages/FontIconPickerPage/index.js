@@ -1,7 +1,8 @@
 import React from 'react';
 import { icons } from '../../utils/social-icons';
-import IconPickerTest from '../../Components/IconPickerTest';
-import IconPicker from '@mohsin-mi/iconpicker';
+import IconPicker from '../../Components/IconPicker';
+// import IconPicker from '@mohsin-mi/iconpicker';
+// import IconPicker from '@mohsin-mi/iconpicker';
 
 const FontIconPickerPage = () => {
   return (
@@ -10,9 +11,9 @@ const FontIconPickerPage = () => {
         <h1 className="App-title mb-[997px]">Font Picker Page</h1>
         <div className='flex w-[30%] mb-[997px]'>
 
-        <IconPickerTest
+        <IconPicker
             icons={icons}
-            value={''}
+            value={'mi-icon-adobe-cloud text-orange-500'}
             onChange={(e) => console.log(e)}
             closeOnSelect={true}
             showCategory={true}
