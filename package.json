@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mindinventory/mi-react-icon-picker": "^1.0.34",
+    "@craftjs/core": "^0.2.12",
+    "@mindinventory/mi-react-icon-picker": "^1.0.35",
     "@mohsin-mi/iconpicker": "^1.0.20",
     "@react-google-maps/api": "^2.20.5",
     "@testing-library/jest-dom": "^5.17.0",
@@ -13,11 +14,15 @@
     "postcss": "^8.4.41",
     "prop-types": "^15.8.1",
     "react": "^18.3.1",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "^18.3.1",
+    "react-gauge-chart": "^0.5.1",
+    "react-gauge-component": "^1.2.64",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
     "tailwindcss": "^3.4.10",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "zustand": "^5.0.11"
   },
   "scripts": {
     "start": "react-scripts start",
